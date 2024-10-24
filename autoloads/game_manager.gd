@@ -1,5 +1,6 @@
 extends Node
 
+var player_ref
 var cur_pmanager
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

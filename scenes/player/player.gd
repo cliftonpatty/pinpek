@@ -60,6 +60,7 @@ var last_rot : Vector3
 @onready var initial_weapon_rot : Vector3 = weapon.rotation
 
 func _ready() -> void:
+	GameManager.player_ref = self
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	last_pos = weapon.position
 	last_rot = weapon.rotation
