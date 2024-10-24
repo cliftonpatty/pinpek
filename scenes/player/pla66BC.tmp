@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0s41wcax6vql"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_lt4s0"]
+[ext_resource type="PackedScene" uid="uid://bscgq5xnvmjfq" path="res://scenes/weapons/all_guns/mpmillyon.tscn" id="2_xx103"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ab0ak"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_lt4s0")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06628, 0)
+
+[node name="Gun" parent="Head" instance=ExtResource("2_xx103")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.371132, -0.401744, -0.728736)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ab0ak")

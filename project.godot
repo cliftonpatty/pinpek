@@ -15,6 +15,14 @@ run/main_scene="res://scenes/world/home.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://autoloads/game_manager.gd"
+
+[global_group]
+
+static_world=""
+
 [input]
 
 forward={

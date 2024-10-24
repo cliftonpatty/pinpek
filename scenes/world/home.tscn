@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://bah7melwtkero"]
+[gd_scene load_steps=15 format=4 uid="uid://bah7melwtkero"]
 
 [ext_resource type="Texture2D" uid="uid://c51i4w15a21ek" path="res://assets/materials/images/bumpy_shit.jpg" id="1_ic6to"]
 [ext_resource type="Script" path="res://scenes/world/home.gd" id="1_ks4h4"]
+[ext_resource type="PackedScene" uid="uid://cpj6pnkui1dgy" path="res://scenes/effects/particle_manager.tscn" id="2_vccp3"]
 [ext_resource type="PackedScene" uid="uid://d0s41wcax6vql" path="res://scenes/player/player.tscn" id="2_xqf3i"]
 [ext_resource type="Texture2D" uid="uid://bhm784ue8muhr" path="res://assets/materials/images/hdri/generic_outdoor.exr" id="3_t81g6"]
+[ext_resource type="PackedScene" uid="uid://dbiv2gustfmge" path="res://scenes/enemies/zombie.tscn" id="6_yw7dw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv77x"]
 
@@ -62,10 +64,10 @@ sky = SubResource("Sky_x7i5c")
 [node name="Home" type="Node3D"]
 script = ExtResource("1_ks4h4")
 
-[node name="ParticleManager" type="Node3D" parent="."]
+[node name="ParticleManager" parent="." instance=ExtResource("2_vccp3")]
 unique_name_in_owner = true
 
-[node name="Foundatioin" type="StaticBody3D" parent="."]
+[node name="Foundatioin" type="StaticBody3D" parent="." groups=["static_world"]]
 
 [node name="Foundation" type="MeshInstance3D" parent="Foundatioin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.97562, 0)
@@ -86,3 +88,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jqo3d")
+
+[node name="zombo2" parent="." instance=ExtResource("6_yw7dw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338708, -0.0697538, -4.05684)

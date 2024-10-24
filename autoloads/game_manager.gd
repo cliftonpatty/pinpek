@@ -1,12 +1,9 @@
-extends Node3D
+extends Node
 
-@onready var p_mnger : Node3D = %ParticleManager
-
+var cur_pmanager
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if p_mnger:
-		GameManager.cur_pmanager = p_mnger
-		print("p man assigned!")
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
